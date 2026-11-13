@@ -1,0 +1,299 @@
+﻿/* Fullscreen Intro */
+.ai-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #050505;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 10%;
+}
+.ai-3d-container {
+  width: 100%;
+  height: 60vh;
+}
+.ai-intro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.ai-kicker {
+  font: 11px var(--mono);
+  letter-spacing: 0.15em;
+  color: #888;
+  margin-bottom: 20px;
+}
+.ai-intro-content h1 {
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 24px;
+}
+.ai-intro-content h1 em {
+  font-style: italic;
+  color: #888;
+}
+.ai-intro-sub {
+  font-size: 16px;
+  color: #999;
+  margin: 24px 0 40px;
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+/* Feature List */
+.ai-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+.ai-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: #ccc;
+}
+.ai-feature-item span {
+  color: #4fd1ff;
+  font-size: 18px;
+}
+
+.ai-btn-primary {
+  background: #fff;
+  color: #000;
+  padding: 16px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-family: var(--sans);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.ai-btn-primary:hover {
+  transform: translateY(-2px);
+}
+.ai-btn-primary.loading {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+/* Floating Widget */
+.ai-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 360px;
+  background: rgba(10, 12, 15, 0.85);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  z-index: 99998;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05) inset;
+  display: flex;
+  flex-direction: column;
+}
+.ai-widget.minimized {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+.ai-restore-btn {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.ai-widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+}
+.ai-widget-title {
+  font: 12px var(--mono);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.05em;
+}
+.ai-widget-controls button {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.ai-widget-controls button:hover { color: #fff; }
+.ai-widget-visual {
+  height: 200px;
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: radial-gradient(circle at center, rgba(79, 209, 255, 0.05) 0%, transparent 70%);
+}
+.ai-thinking-text {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font: 10px var(--mono);
+  color: #4fd1ff;
+  letter-spacing: 0.1em;
+  animation: pulse-opacity 1.5s infinite;
+}
+@keyframes pulse-opacity {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+.ai-widget-chat {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+.ai-msg {
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.ai-msg.assistant {
+  background: rgba(255,255,255,0.06);
+  color: #e2e8f0;
+  border-bottom-left-radius: 4px;
+}
+.ai-msg.user {
+  background: #fff;
+  color: #000;
+  border-bottom-right-radius: 4px;
+  align-self: flex-end;
+}
+.ai-widget-controls-bottom {
+  padding: 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+}
+.ai-mic-btn {
+  width: 100%;
+  padding: 14px;
+  background: rgba(79, 209, 255, 0.1);
+  border: 1px solid rgba(79, 209, 255, 0.3);
+  color: #4fd1ff;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.ai-mic-btn:hover {
+  background: rgba(79, 209, 255, 0.2);
+}
+.ai-mic-btn.active {
+  background: #4fd1ff;
+  color: #000;
+  animation: pulse-mic 1.5s infinite;
+}
+
+/* Text Input */
+.ai-input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.ai-input-row input {
+  flex: 1;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 14px 18px;
+  border-radius: 30px;
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.ai-input-row input:focus {
+  border-color: #4fd1ff;
+}
+.ai-send-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+.ai-send-btn:hover { transform: scale(1.05); }
+
+@keyframes pulse-mic {
+  0% { box-shadow: 0 0 0 0 rgba(79, 209, 255, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(79, 209, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(79, 209, 255, 0); }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 768px) {
+  .ai-fullscreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+  }
+  .ai-3d-container {
+    height: 40vh;
+    margin-bottom: 10px;
+  }
+  .ai-intro-content {
+    align-items: center;
+  }
+  .ai-intro-content h1 {
+    font-size: 40px;
+  }
+  .ai-features-list {
+    align-items: center;
+  }
+  .ai-btn-primary {
+    width: 100%;
+    max-width: 300px;
+  }
+  .ai-widget {
+    width: calc(100vw - 32px);
+    right: 16px;
+    bottom: 16px;
+  }
+  .ai-widget.minimized {
+    width: 70px;
+    height: 70px;
+  }
+  .ai-widget-visual {
+    height: 160px;
+  }
+  .ai-widget-chat {
+    max-height: 180px;
+  }
+  .ai-input-row input {
+    font-size: 16px; /* Prevents iOS auto-zoom */
+  }
+}
