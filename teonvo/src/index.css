@@ -3157,3 +3157,207 @@ html, body, #root {
     height: 350px;
   }
 }
+
+/* =========================================================================
+   MOBILE HERO 3D OVERLAY
+   ========================================================================= */
+@media (max-width: 768px) {
+  .hero {
+    position: relative;
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    padding-top: 100px !important;
+  }
+
+  /* Make the sphere sit behind the text */
+  .hero canvas {
+    z-index: 0 !important;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Create a dark gradient so the text is readable */
+  .hero-overlay {
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(8,9,10,1) 0%, rgba(8,9,10,0.8) 40%, rgba(8,9,10,0.2) 100%) !important;
+    z-index: 1 !important;
+  }
+
+  .hero-copy {
+    position: relative;
+    z-index: 2 !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 12vw, 64px) !important;
+    text-align: center !important;
+  }
+
+  .hero-sub {
+    text-align: center !important;
+    margin: 0 auto 30px !important;
+  }
+
+  .hero-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    align-items: center !important;
+  }
+
+  .hero-actions .button {
+    width: 100% !important;
+    max-width: 300px !important;
+    justify-content: center !important;
+  }
+}
+
+/* =========================================================================
+   MOBILE HERO FIX: STRICT LEFT ALIGNMENT & PERFECT LAYOUT
+   ========================================================================= */
+@media (max-width: 768px) {
+  .hero {
+    position: relative;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    padding-top: 120px !important;
+  }
+
+  /* Ensure the 3D canvas covers the screen */
+  .hero canvas {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+  }
+
+  /* Subtle gradient to keep text readable against the 3D sphere */
+  .hero-overlay {
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(8,9,10,0.9) 0%, rgba(8,9,10,0.7) 50%, rgba(8,9,10,0) 100%) !important;
+    z-index: 1 !important;
+    pointer-events: none;
+  }
+
+  /* Force text strictly to the left */
+  .hero-copy {
+    position: relative;
+    z-index: 2 !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    max-width: 100% !important;
+    padding: 0 20px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 12vw, 64px) !important;
+    text-align: left !important;
+    margin-bottom: 20px !important;
+  }
+
+  .hero-sub {
+    text-align: left !important;
+    margin: 0 0 30px 0 !important;
+    font-size: 16px !important;
+  }
+
+  .hero-actions {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    gap: 20px !important;
+  }
+
+  .hero-actions .button {
+    width: 100% !important;
+    max-width: 280px !important;
+    justify-content: space-between !important;
+  }
+}
+
+/* =========================================================================
+   MOBILE HERO FIX: CENTERED 3D & BOTTOM-LEFT TEXT
+   ========================================================================= */
+@media (max-width: 768px) {
+  .hero {
+    position: relative;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important; /* Pushes text to the bottom */
+    padding-bottom: 60px !important;
+    padding-top: 0 !important;
+  }
+
+  .hero canvas {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+  }
+
+  /* Gradient fades from bottom (dark) to top (transparent) */
+  .hero-overlay {
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #08090a 10%, rgba(8,9,10,0.8) 40%, transparent 80%) !important;
+    z-index: 1 !important;
+    pointer-events: none;
+  }
+
+  /* Text strictly aligned to the left */
+  .hero-copy {
+    position: relative;
+    z-index: 2 !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+    padding: 0 24px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 12vw, 64px) !important;
+    text-align: left !important;
+    margin-bottom: 16px !important;
+    line-height: 1 !important;
+  }
+
+  .hero-sub {
+    text-align: left !important;
+    margin: 0 0 24px 0 !important;
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+  .hero-actions {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    gap: 16px !important;
+  }
+
+  .hero-actions .button {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  /* Hide scroll indicator on mobile to save space */
+  .hero-scroll {
+    display: none !important;
+  }
+}
