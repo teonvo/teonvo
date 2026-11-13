@@ -3,22 +3,10 @@ import Hero3D from './Hero3D'
 import Magnetic from './Magnetic'
 
 export default function Hero() {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth <= 768)
-  }, [])
-
   return (
     <section className="hero">
-      {!isMobile ? (
-        <>
-          <Hero3D />
-          <div className="hero-overlay"></div>
-        </>
-      ) : (
-        <div className="mobile-hero-bg"></div>
-      )}
+      <Hero3D />
+      <div className="hero-overlay"></div>
       
       <div className="hero-container section-shell">
         <div className="hero-copy">
