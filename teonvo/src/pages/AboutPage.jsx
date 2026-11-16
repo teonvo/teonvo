@@ -12,8 +12,8 @@ gsap.registerPlugin(ScrollTrigger)
 const team = [
   { name: 'Utkarsh Bisht', role: 'Founder', bio: 'Drives the vision and creative direction, ensuring every project pushes the boundaries of digital design.', image: './WhatsApp Image 2026-11-13 at 3.58.04 AM.jpeg' },
   { name: 'Udit Kandari', role: 'COO', bio: 'Oversees operations and strategy, ensuring seamless delivery and exceptional client experiences.', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop' },
-  { name: 'Rituraj', role: 'Frontend Engineer', bio: 'Builds high-performance, interactive interfaces and architectures that bring complex designs to life.', image: './public/WhatsApp Image 2026-11-13 at 3.58.03 AM.jpeg' },
-  { name: 'Elara', role: 'Social Media Manager', bio: 'Creates engaging digital experiences, builds brand presence, and drives audience engagement through creative social media strategies.', image: './public/1000289431.jpg'}
+  { name: 'Rituraj', role: 'Frontend Engineer', bio: 'Builds high-performance, interactive interfaces and architectures that bring complex designs to life.', image: './WhatsApp Image 2026-11-13 at 3.58.03 AM.jpeg' },
+  { name: 'Elara', role: 'Social Media Manager', bio: 'Creates engaging digital experiences, builds brand presence, and drives audience engagement through creative social media strategies.', image: './1000289431.jpg'}
 ]
 
 const values = [
