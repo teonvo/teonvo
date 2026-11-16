@@ -50,7 +50,7 @@ export default function ContactPage() {
             <div className="ct-details">
               <div className="ct-detail-block">
                 <span className="ct-label">Email Us Directly</span>
-                <a href="mailto:teonvo@gmail.com" className="ct-value">teonvo@gmail.com</a>
+                <a href="mailto:teonvo@gmail.com" className="ct-value">itsteonvo@gmail.com</a>
               </div>
               <div className="ct-detail-block">
                 <span className="ct-label">Book a Call</span>
