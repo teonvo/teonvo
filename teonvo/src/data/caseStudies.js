@@ -4,7 +4,7 @@
     title: 'BOOTS ON HYGHT',
     category: 'Travel & Adventure',
     url: 'bootsonhyght.com',
-    heroImage: '/public/WhatsApp Image 2026-11-03 at 2.27.56 AM.jpeg',
+    heroImage: './WhatsApp Image 2026-11-03 at 2.27.56 AM.jpeg',
     intro: 'Premium immersive travel and trekking digital experience designed to inspire exploration.',
     client: 'Boots on Hght',
     year: '2024',
